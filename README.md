@@ -13,7 +13,7 @@ This project was based on Dan Fergus's and Sarah Council's *Belly Button Biodive
 
 # Screenshots
 
-## Default view - bubble chart
+## Default view - pie chart
 <img src="presentation/1.PNG" width="900">
 
 ## Default pie Chart
