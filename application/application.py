@@ -1,50 +1,49 @@
-# Native
-import os
-
 # Third Party
-import numpy as np
 import pandas as pd
-import sqlalchemy
 from sqlalchemy.ext.automap import automap_base
-from sqlalchemy.orm import Session
-from sqlalchemy import create_engine
 from flask import Flask, jsonify, render_template
 from flask_sqlalchemy import SQLAlchemy
 
 
-app = Flask(__name__)
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///db/bellybutton.sqlite"
-app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
-db = SQLAlchemy(app)
-
-# reflect an existing database into a new model
+# Create base model class
 Base = automap_base()
-# reflect the tables
-Base.prepare(db.engine, reflect=True)
+
+DB = SQLAlchemy()
+
+application = Flask(__name__)
+application.config["DEBUG"] = True
+application.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///../db/bellybutton.sqlite"
+application.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+
+DB.init_app(application)
+
+with application.app_context():
+    # reflect the tables
+    Base.prepare(autoload_with=DB.engine)
 
 # Save references to each table
 Samples_Metadata = Base.classes.sample_metadata
 Samples = Base.classes.samples
 
 
-@app.route("/")
+@application.route("/")
 def index():
     """Return the homepage."""
     return render_template("index.html")
 
 
-@app.route("/names")
+@application.route("/names")
 def names():
     """Return a list of sample names."""
     # Use Pandas to perform the sql query
-    stmt = db.session.query(Samples).statement
-    df = pd.read_sql_query(stmt, db.session.bind)
+    stmt = DB.session.query(Samples).statement
+    df = pd.read_sql_query(stmt, DB.engine)
 
     # Return a list of the column names (sample names)
     return jsonify(list(df.columns)[2:])
 
 
-@app.route("/metadata/<sample>")
+@application.route("/metadata/<sample>")
 def sample_metadata(sample):
     """Return the MetaData for a given sample."""
     sel = [
@@ -57,7 +56,7 @@ def sample_metadata(sample):
         Samples_Metadata.WFREQ,
     ]
 
-    results = db.session.query(*sel).filter(Samples_Metadata.sample == sample).all()
+    results = DB.session.query(*sel).filter(Samples_Metadata.sample == sample).all()
 
     # Create a dictionary entry for each row of metadata information
     sample_metadata = {}
@@ -73,11 +72,11 @@ def sample_metadata(sample):
     return jsonify(sample_metadata)
 
 
-@app.route("/samples/<sample>")
+@application.route("/samples/<sample>")
 def samples(sample):
     """Return `otu_ids`, `otu_labels`,and `sample_values`."""
-    stmt = db.session.query(Samples).statement
-    df = pd.read_sql_query(stmt, db.session.bind)
+    stmt = DB.session.query(Samples).statement
+    df = pd.read_sql_query(stmt, DB.engine)
 
     # Filter the data based on the sample number and
     # only keep rows with values above 1
@@ -92,4 +91,4 @@ def samples(sample):
 
 
 if __name__ == "__main__":
-    app.run()
+    application.run()
