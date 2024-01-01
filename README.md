@@ -15,6 +15,8 @@ _This project was for an assignment at Washington University's Data Analytics Bo
 - Pandas
 - d3.js
 - Plotly.js
+- SQLAlchemy
+- flask_sqlalchemy
 - SQLite
 - Bootstrap 3
 
