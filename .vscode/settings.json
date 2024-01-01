@@ -8,6 +8,7 @@
         "automap",
         "BBTYPE",
         "jsonify",
+        "Plotly",
         "SQLALCHEMY",
         "WFREQ"
     ]
