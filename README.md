@@ -12,6 +12,8 @@ _This project was for an assignment at Washington University's Data Analytics Bo
 - HTML
 - CSS
 - Flask
+- Pandas
+- d3.js
 - Plotly.js
 - SQLite
 - Bootstrap 3
