@@ -1,7 +1,7 @@
 version: "3"
 
 services:
-  topwine-dev-service:
+  belly-button-biodiversity-service:
     container_name: belly-button-biodiversity-dev-container
     build:
       context: ..
