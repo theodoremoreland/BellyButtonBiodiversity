@@ -4,6 +4,9 @@ from sqlalchemy.ext.automap import automap_base
 from flask import Flask, jsonify, render_template
 from flask_sqlalchemy import SQLAlchemy
 
+# Custom
+from modules.logger import logger
+
 
 # Create base model class
 Base = automap_base()
@@ -29,12 +32,15 @@ Samples = Base.classes.samples
 @application.route("/")
 def index():
     """Return the homepage."""
+    logger.info("Homepage requested")
+
     return render_template("index.html")
 
 
 @application.route("/names")
 def names():
     """Return a list of sample names."""
+    logger.info("Names requested")
     # Use Pandas to perform the sql query
     stmt = DB.session.query(Samples).statement
     df = pd.read_sql_query(stmt, DB.engine)
@@ -46,6 +52,8 @@ def names():
 @application.route("/metadata/<sample>")
 def sample_metadata(sample):
     """Return the MetaData for a given sample."""
+    logger.info(f"Metadata requested for sample {sample}")
+
     sel = [
         Samples_Metadata.sample,
         Samples_Metadata.ETHNICITY,
@@ -75,6 +83,8 @@ def sample_metadata(sample):
 @application.route("/samples/<sample>")
 def samples(sample):
     """Return `otu_ids`, `otu_labels`,and `sample_values`."""
+    logger.info(f"Sample data requested for sample {sample}")
+
     stmt = DB.session.query(Samples).statement
     df = pd.read_sql_query(stmt, DB.engine)
 
