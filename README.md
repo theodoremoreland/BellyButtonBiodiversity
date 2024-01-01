@@ -5,6 +5,8 @@ This project was based on Dan Fergus's and Sarah Council's _Belly Button Biodive
 
 _This project was for an assignment at Washington University's Data Analytics Boot Camp (2019)_
 
+<img src="presentation/thumbnail.png" width="900">
+
 # Table of contents
 
 - [Technologies Used](#technologies-used)
