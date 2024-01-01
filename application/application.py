@@ -41,12 +41,18 @@ def index():
 def names():
     """Return a list of sample names."""
     logger.info("Names requested")
-    # Use Pandas to perform the sql query
-    stmt = DB.session.query(Samples).statement
-    df = pd.read_sql_query(stmt, DB.engine)
 
-    # Return a list of the column names (sample names)
-    return jsonify(list(df.columns)[2:])
+    try:
+        # Use Pandas to perform the sql query
+        stmt = DB.session.query(Samples).statement
+        df = pd.read_sql_query(stmt, DB.engine)
+
+        # Return a list of the column names (sample names)
+        return jsonify(list(df.columns)[2:])
+    except Exception as e:
+        logger.exception(f"Error getting sample names: {e}")
+
+        return render_template("error.html")
 
 
 @application.route("/metadata/<sample>")
@@ -54,30 +60,35 @@ def sample_metadata(sample):
     """Return the MetaData for a given sample."""
     logger.info(f"Metadata requested for sample {sample}")
 
-    sel = [
-        Samples_Metadata.sample,
-        Samples_Metadata.ETHNICITY,
-        Samples_Metadata.GENDER,
-        Samples_Metadata.AGE,
-        Samples_Metadata.LOCATION,
-        Samples_Metadata.BBTYPE,
-        Samples_Metadata.WFREQ,
-    ]
+    try:
+        sel = [
+            Samples_Metadata.sample,
+            Samples_Metadata.ETHNICITY,
+            Samples_Metadata.GENDER,
+            Samples_Metadata.AGE,
+            Samples_Metadata.LOCATION,
+            Samples_Metadata.BBTYPE,
+            Samples_Metadata.WFREQ,
+        ]
 
-    results = DB.session.query(*sel).filter(Samples_Metadata.sample == sample).all()
+        results = DB.session.query(*sel).filter(Samples_Metadata.sample == sample).all()
 
-    # Create a dictionary entry for each row of metadata information
-    sample_metadata = {}
-    for result in results:
-        sample_metadata["SAMPLE"] = result[0]
-        sample_metadata["ETHNICITY"] = result[1]
-        sample_metadata["GENDER"] = result[2]
-        sample_metadata["AGE"] = result[3]
-        sample_metadata["LOCATION"] = result[4]
-        sample_metadata["BBTYPE"] = result[5]
-        sample_metadata["WFREQ"] = result[6]
+        # Create a dictionary entry for each row of metadata information
+        sample_metadata = {}
+        for result in results:
+            sample_metadata["SAMPLE"] = result[0]
+            sample_metadata["ETHNICITY"] = result[1]
+            sample_metadata["GENDER"] = result[2]
+            sample_metadata["AGE"] = result[3]
+            sample_metadata["LOCATION"] = result[4]
+            sample_metadata["BBTYPE"] = result[5]
+            sample_metadata["WFREQ"] = result[6]
 
-    return jsonify(sample_metadata)
+        return jsonify(sample_metadata)
+    except Exception as e:
+        logger.exception(f"Error getting sample metadata: {e}")
+
+        return render_template("error.html")
 
 
 @application.route("/samples/<sample>")
@@ -85,19 +96,25 @@ def samples(sample):
     """Return `otu_ids`, `otu_labels`,and `sample_values`."""
     logger.info(f"Sample data requested for sample {sample}")
 
-    stmt = DB.session.query(Samples).statement
-    df = pd.read_sql_query(stmt, DB.engine)
+    try:
+        stmt = DB.session.query(Samples).statement
+        df = pd.read_sql_query(stmt, DB.engine)
 
-    # Filter the data based on the sample number and
-    # only keep rows with values above 1
-    sample_data = df.loc[df[sample] > 1, ["otu_id", "otu_label", sample]]
-    # Format the data to send as json
-    data = {
-        "otu_ids": sample_data.otu_id.values.tolist(),
-        "sample_values": sample_data[sample].values.tolist(),
-        "otu_labels": sample_data.otu_label.tolist(),
-    }
-    return jsonify(data)
+        # Filter the data based on the sample number and
+        # only keep rows with values above 1
+        sample_data = df.loc[df[sample] > 1, ["otu_id", "otu_label", sample]]
+        # Format the data to send as json
+        data = {
+            "otu_ids": sample_data.otu_id.values.tolist(),
+            "sample_values": sample_data[sample].values.tolist(),
+            "otu_labels": sample_data.otu_label.tolist(),
+        }
+
+        return jsonify(data)
+    except Exception as e:
+        logger.exception(f"Error getting samples: {e}")
+
+        return render_template("error.html")
 
 
 if __name__ == "__main__":
