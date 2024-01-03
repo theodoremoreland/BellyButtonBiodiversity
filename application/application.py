@@ -75,14 +75,13 @@ def sample_metadata(sample):
 
         # Create a dictionary entry for each row of metadata information
         sample_metadata = {}
+
         for result in results:
-            sample_metadata["SAMPLE"] = result[0]
             sample_metadata["ETHNICITY"] = result[1]
             sample_metadata["GENDER"] = result[2]
             sample_metadata["AGE"] = result[3]
             sample_metadata["LOCATION"] = result[4]
             sample_metadata["BBTYPE"] = result[5]
-            sample_metadata["WFREQ"] = result[6]
 
         return jsonify(sample_metadata)
     except Exception as e:
@@ -113,6 +112,30 @@ def samples(sample):
         return jsonify(data)
     except Exception as e:
         logger.exception(f"Error getting samples: {e}")
+
+        return render_template("error.html")
+
+
+@application.route("/wfreq/<sample>")
+def wfreq(sample):
+    """Return the Weekly Washing Frequency for given sample / person."""
+
+    logger.info(f"WFREQ requested for sample {sample}")
+
+    try:
+        # Returns [(float,)] or [(None,)] if no sample found
+        results = (
+            DB.session.query(Samples_Metadata.WFREQ)
+            .filter(Samples_Metadata.sample == sample)
+            .all()
+        )
+
+        # Index into array > tuple to get float representing wfreq
+        wfreq = results[0][0]
+
+        return jsonify(wfreq)
+    except Exception as e:
+        logger.exception(f"Error getting washing frequency: {e}")
 
         return render_template("error.html")
 

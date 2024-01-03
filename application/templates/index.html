@@ -8,48 +8,56 @@
     <title>Belly Button Biodiversity</title>
     <!-- <a target="_blank" href="https://icons8.com/icon/13vbilOYBZeU/microorganism">Microorganism</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a> -->
     <link rel="icon" type="image/png" href="../static/images/favicon.png">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
 
   <body>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12 jumbotron text-center">
-          <h1>Belly Button Biodiversity Dashboard</h1>
-          <p>Use the interactive charts below to explore the dataset</p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-3">
-          <div class="well">
-            <h5>SELECT Sample:</h5>
-            <select id="selDataset" onchange="optionChanged(this.value)"></select>
-          </div>
-          <div class="panel panel-primary">
-            <div class="panel-heading">
-              <h3 class="panel-title">Sample MetaData</h3>
-            </div>
-            <div id="sample-metadata" class="panel-body"></div>
-          </div>
-        </div>
-        <div class="col-md-7">
-          <div id="pie"></div>
-        </div>
-        <div class="col">
-          <div id="gauge"></div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-12">
-          <div id="bubble"></div>
-        </div>
-      </div>
+    <aside
+      class="selection-container fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0">
+      <ul id="selDataset"
+        class="h-full text-sm overflow-y-auto font-medium text-gray-900 bg-white border border-gray-200 dark:bg-blue-900 dark:border-gray-600 dark:text-white">
+        <p class="selection-label sticky top-0 left-0 p-4 dark:bg-blue-900 shadow">Select sample:</p>
+      </ul>
+    </aside>
+
+    <div class="title-container pl-80">
+      <h1 class="title text-base font-semibold leading-7 text-gray-900">Belly Button Biodiversity Dashboard</h1>
+      <p class="subtitle mt-1 max-w-2xl text-sm leading-6 text-gray-500">Use the interactive charts below to explore the
+        dataset</p>
     </div>
 
-    <!-- <script src="https://cdn.plot.ly/plotly-1.31.2.min.js"></script> -->
+    <main class="pl-80 flex flex-wrap">
+      <div class="panel panel-primary w-6/12">
+        <div class="panel-heading">
+          <h3 class="panel-title">Sample Metadata</h3>
+        </div>
+        <div id="sample-metadata" class="panel-body"></div>
+      </div>
+
+      <div class="w-6/12">
+        <div id="pie"></div>
+      </div>
+
+      <div class="w-6/12">
+        <div id="gauge"></div>
+      </div>
+
+      <div class="w-6/12">
+        <div id="bubble"></div>
+      </div>
+    </main>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+
+    <!-- Highcharts -->
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/highcharts-more.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
   </body>
 
 </html>
