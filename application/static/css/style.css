@@ -85,13 +85,13 @@ header > .bg {
 header > h1 {
   z-index: 2;
   position: relative;
-  padding-top: 4px;
+  padding-top: 10px;
 }
 
 header > p {
   z-index: 2;
   position: relative;
-  padding-bottom: 6px;
+  padding-bottom: 10px;
 }
 
 ul {
@@ -180,6 +180,7 @@ rect.highcharts-background {
 #pie,
 #gauge {
   width: 40%;
+  max-width: 630px;
 }
 
 #bubble {
