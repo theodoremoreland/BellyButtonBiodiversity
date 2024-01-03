@@ -132,13 +132,13 @@ function buildCharts(sample) {
           },
           dial: {
             radius: "80%",
-            backgroundColor: "gray",
+            backgroundColor: "white",
             baseWidth: 12,
             baseLength: "0%",
             rearLength: "0%",
           },
           pivot: {
-            backgroundColor: "gray",
+            backgroundColor: "white",
             radius: 6,
           },
         },

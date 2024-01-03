@@ -123,8 +123,7 @@ section {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 
-section > .dashboard-row:first-of-type {
-  margin-bottom: 20px;
+section > .dashboard-row:nth-of-type(2) {
   background-color: #00000080;
   border-radius: 9px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
@@ -149,6 +148,7 @@ rect.highcharts-background {
   justify-content: space-around;
   align-items: center;
   width: 100%;
+  margin-bottom: 20px;
 }
 
 .sample {
