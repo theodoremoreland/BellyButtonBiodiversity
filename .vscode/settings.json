@@ -1,16 +1,17 @@
 {
-    "[python]": {
-        "editor.defaultFormatter": "ms-python.black-formatter",
-        "editor.formatOnSave": true
-    },
-    "cSpell.words": [
-        "autoload",
-        "automap",
-        "BBTYPE",
-        "colorscale",
-        "jsonify",
-        "Plotly",
-        "SQLALCHEMY",
-        "WFREQ"
-    ]
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.formatOnSave": true
+  },
+  "cSpell.words": [
+    "autoload",
+    "automap",
+    "BBTYPE",
+    "colorscale",
+    "jsonify",
+    "Plotly",
+    "Sono",
+    "SQLALCHEMY",
+    "WFREQ"
+  ]
 }

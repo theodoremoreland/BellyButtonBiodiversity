@@ -5,7 +5,7 @@ function buildMetadata(sample) {
     sample_panel.html("");
 
     Object.entries(sample_data).forEach(([key, value]) => {
-      sample_panel.append().html(`<h4><strong>${key}:</strong> ${value}</h4>`);
+      sample_panel.append("p").html(`<strong>${key}:</strong> ${value}`);
     });
   });
 }
@@ -27,6 +27,11 @@ function buildCharts(sample) {
     ];
 
     var pie_layout = {
+      title: "Bacteria",
+      font: {
+        family: "Inconsolata-Regular",
+        color: "white",
+      },
       colorway: [
         "#87CEEB",
         "#00BFFF",
@@ -39,11 +44,11 @@ function buildCharts(sample) {
         "#E6E6FA",
         "#FF00FF",
       ],
-      height: 500,
-      width: 500,
+      height: 450,
+      width: 450,
     };
 
-    Plotly.newPlot("pie", pie_data, pie_layout);
+    Plotly.newPlot("pie", pie_data, pie_layout, { responsive: true });
   });
 
   d3.json("/wfreq/" + sample).then(function (sample_data) {
@@ -54,13 +59,15 @@ function buildCharts(sample) {
         plotBackgroundImage: null,
         plotBorderWidth: 0,
         plotShadow: false,
-        height: "80%",
+        height: "100%",
       },
-
       title: {
         text: "Bully button washing frequency",
+        style: {
+          fontFamily: "Inconsolata-Regular",
+          color: "white",
+        },
       },
-
       pane: {
         startAngle: -90,
         endAngle: 89.9,
@@ -68,14 +75,13 @@ function buildCharts(sample) {
         center: ["50%", "75%"],
         size: "110%",
       },
-
       // the value axis
       yAxis: {
         min: 0,
         max: 9,
         tickPixelInterval: 72,
         tickPosition: "inside",
-        tickColor: Highcharts.defaultOptions.chart.backgroundColor || "#FFFFFF",
+        tickColor: "white",
         tickLength: 20,
         tickWidth: 2,
         minorTickInterval: null,
@@ -83,6 +89,7 @@ function buildCharts(sample) {
           distance: 20,
           style: {
             fontSize: "14px",
+            color: "white",
           },
         },
         lineWidth: 0,
@@ -107,7 +114,6 @@ function buildCharts(sample) {
           },
         ],
       },
-
       series: [
         {
           name: "Washes per Week",
@@ -118,13 +124,10 @@ function buildCharts(sample) {
           dataLabels: {
             format: "{y} washes per week",
             borderWidth: 0,
-            color:
-              (Highcharts.defaultOptions.title &&
-                Highcharts.defaultOptions.title.style &&
-                Highcharts.defaultOptions.title.style.color) ||
-              "#333333",
+            color: "white",
             style: {
               fontSize: "16px",
+              fontFamily: "Inconsolata-Regular",
             },
           },
           dial: {
@@ -162,25 +165,32 @@ function buildCharts(sample) {
       },
     ];
 
-    Plotly.newPlot("bubble", trace);
+    var bubble_layout = {
+      title: "Bacteria",
+      font: {
+        family: "Inconsolata-Regular",
+        color: "white",
+      },
+    };
+
+    Plotly.newPlot("bubble", trace, bubble_layout, { responsive: true });
   });
 }
 
 function init() {
-  // Grab a reference to the dropdown select element
-  var selector = d3.select("#selDataset");
+  // Grab a reference to the sample list element
+  var selector = d3.select("#sample-list");
 
   // Use the list of sample names to populate the select options
   d3.json("/names").then((sampleNames) => {
     sampleNames.forEach((sample) => {
-      selector
-        .append("li")
-        .text(sample)
-        .attr("data-value", sample)
-        .attr(
-          "class",
-          "sample block w-full px-4 py-2 border-b border-gray-200 cursor-pointer hover:bg-gray-100 hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:border-gray-600 dark:hover:bg-gray-600 dark:hover:text-white dark:focus:ring-gray-500 dark:focus:text-white"
-        );
+      const li = document.createElement("li");
+
+      li.setAttribute("data-value", sample);
+      li.setAttribute("class", "sample");
+      li.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" height="20" width="20" viewBox="0 -960 960 960"><path d="M400-720q-33 0-56.5-23.5T320-800q0-33 23.5-56.5T400-880q33 0 56.5 23.5T480-800q0 33-23.5 56.5T400-720Zm260 480q42 0 71-29t29-71q0-42-29-71t-71-29q-42 0-71 29t-29 71q0 42 29 71t71 29ZM864-80 756-188q-22 14-46 21t-50 7q-75 0-127.5-52.5T480-340q0-75 52.5-127.5T660-520q75 0 127.5 52.5T840-340q0 26-7 50t-21 46l108 108-56 56Zm-424 0v-121q15 24 35.5 44t44.5 36v41h-80Zm-160 0v-520q-61-5-121-14.5T40-640l20-80q84 23 168.5 31.5T400-680q87 0 171.5-8.5T740-720l20 80q-59 16-119 25.5T520-600v41q-54 35-87 92.5T400-340v10q0 5 1 10h-41v240h-80Z"/></svg><p>${sample}</p>`;
+
+      selector.append(() => li);
     });
 
     // Use the first sample from the list to build the initial plots
@@ -191,15 +201,17 @@ function init() {
   });
 }
 
-document.querySelector("#selDataset").addEventListener("click", (event) => {
-  event.stopPropagation();
-
+document.querySelector("#sample-list").addEventListener("click", (event) => {
   const target = event.target;
   const newSample = Number(target.getAttribute("data-value"));
 
-  // Fetch new data each time a new sample is selected
-  buildCharts(newSample);
-  buildMetadata(newSample);
+  console.log(target);
+
+  if (newSample) {
+    // Fetch new data each time a new sample is selected
+    buildCharts(newSample);
+    buildMetadata(newSample);
+  }
 });
 
 // Initialize the dashboard

@@ -1,4 +1,187 @@
+/* ___________________ FONTS ____________________________ */
+
+@font-face {
+  font-family: Inconsolata-Bold;
+  src: url("../fonts/Inconsolata-Bold.ttf");
+}
+
+@font-face {
+  font-family: Inconsolata-Regular;
+  src: url("../fonts/Inconsolata-Regular.ttf");
+}
+
+@font-face {
+  font-family: Inconsolata-Light;
+  src: url("../fonts/Inconsolata-Light.ttf");
+}
+
+html {
+  font-family: Inconsolata-Regular;
+}
+
+body {
+  position: relative;
+}
+
+body,
+main {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+aside {
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 8.5rem;
+  color: white;
+  fill: white;
+  background-color: #00000080;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+main {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  padding: 10px 30px 10px 9.5rem;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(180deg, rgb(88, 21, 148) 0%, rgb(27, 17, 77) 65%);
+}
+
+header {
+  position: relative;
+  color: white;
+  text-align: center;
+  border-radius: 9px;
+  background-color: black;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+header > .bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: 9px;
+  background-image: url("../images/pexels-anni-roenkae-18232454.jpg"); /* The image used */
+  background-color: #00000000; /* Used if the image is unavailable */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+  opacity: 0.3;
+}
+
+header > h1 {
+  z-index: 2;
+  position: relative;
+  padding-top: 4px;
+}
+
+header > p {
+  z-index: 2;
+  position: relative;
+  padding-bottom: 6px;
+}
+
 ul {
+  position: relative;
+  height: calc(100% - 1.9rem);
+  width: 100%;
+  margin: 0;
+  padding: 0;
   list-style: none;
   overflow-y: scroll;
+  text-align: center;
+}
+
+li:hover,
+li:active {
+  cursor: pointer;
+  border-radius: 9px;
+  opacity: 0.7;
+}
+
+li > svg,
+li > p {
+  pointer-events: none;
+}
+
+section {
+  border-radius: 20px;
+  /* background-color: white; */
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+section > .dashboard-row:first-of-type {
+  margin-bottom: 20px;
+  background-color: #00000080;
+  border-radius: 9px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+#bubble {
+  background-color: #00000080;
+  border-radius: 9px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+/* Legend for pie chart and background for gauge */
+rect.bg,
+rect.highcharts-background {
+  fill: #00000000 !important;
+}
+
+.dashboard-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+
+.sample {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Plotly chart background */
+.main-svg {
+  background-color: #00000000 !important;
+}
+
+#sample-list-label {
+  position: sticky;
+  height: 1.9rem;
+  margin: 0;
+  padding: 10px;
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+}
+
+#metadata {
+  display: none;
+}
+
+#pie,
+#gauge {
+  width: 40%;
+}
+
+#bubble {
+  width: 100%;
 }

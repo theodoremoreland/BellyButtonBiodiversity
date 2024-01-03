@@ -9,43 +9,37 @@
     <!-- <a target="_blank" href="https://icons8.com/icon/13vbilOYBZeU/microorganism">Microorganism</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a> -->
     <link rel="icon" type="image/png" href="../static/images/favicon.png">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   </head>
 
   <body>
-    <aside
-      class="selection-container fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0">
-      <ul id="selDataset"
-        class="h-full text-sm overflow-y-auto font-medium text-gray-900 bg-white border border-gray-200 dark:bg-blue-900 dark:border-gray-600 dark:text-white">
-        <p class="selection-label sticky top-0 left-0 p-4 dark:bg-blue-900 shadow">Select sample:</p>
+    <aside class="selection-container">
+      <p id="sample-list-label">Select test subject:</p>
+      <ul id="sample-list">
       </ul>
     </aside>
 
-    <div class="title-container pl-80">
-      <h1 class="title text-base font-semibold leading-7 text-gray-900">Belly Button Biodiversity Dashboard</h1>
-      <p class="subtitle mt-1 max-w-2xl text-sm leading-6 text-gray-500">Use the interactive charts below to explore the
-        dataset</p>
-    </div>
-
-    <main class="pl-80 flex flex-wrap">
-      <div class="panel panel-primary w-6/12">
-        <div class="panel-heading">
-          <h3 class="panel-title">Sample Metadata</h3>
+    <main>
+      <header class="title-container">
+        <div class="bg"></div>
+        <h1 class="title">Belly Button Biodiversity Dashboard</h1>
+        <p class="subtitle">Use the interactive charts below to explore the
+          dataset</p>
+      </header>
+      <section>
+        <div class="dashboard-row">
+          <div id="metadata">
+            <h3 class="panel-title">Test Subject Metadata</h3>
+            <div id="sample-metadata" class="panel-body"></div>
+          </div>
+          <div id="pie" class="_chart-container"></div>
+          <div id="gauge" class="_chart-container"></div>
         </div>
-        <div id="sample-metadata" class="panel-body"></div>
-      </div>
-
-      <div class="w-6/12">
-        <div id="pie"></div>
-      </div>
-
-      <div class="w-6/12">
-        <div id="gauge"></div>
-      </div>
-
-      <div class="w-6/12">
-        <div id="bubble"></div>
-      </div>
+        <div class="dashboard-row">
+          <div id="bubble" class="_chart-container"></div>
+        </div>
+      </section>
     </main>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
