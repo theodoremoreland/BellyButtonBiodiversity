@@ -170,7 +170,7 @@ function buildCharts(sample) {
         marker: {
           size: values,
           color: ids,
-          colorscale: "Blues",
+          colorscale: "Bluered",
         },
       },
     ];
