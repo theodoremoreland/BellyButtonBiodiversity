@@ -94,30 +94,6 @@ Visit: http://localhost:5000 to use the application.
 
 # Screenshots
 
-## Default view - pie chart
+## Default
 
-<img src="presentation/1.PNG" width="900">
-
-## Default pie Chart
-
-<img src="presentation/2.PNG" width="900">
-
-## Sample dropdown
-
-<img src="presentation/3.PNG" width="900">
-
-## Results of selecting sample #961
-
-<img src="presentation/4.PNG" width="900">
-
-## Pie chart hover text
-
-<img src="presentation/5.PNG" width="900">
-
-## Pie chart + bubble chart (sample #961)
-
-<img src="presentation/6.PNG" width="900">
-
-## Pie chart + bubble chart (sample #1260)
-
-<img src="presentation/7.PNG" width="900">
+<img src="presentation/thumbnail.png" width="900">
