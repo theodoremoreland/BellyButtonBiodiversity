@@ -36,6 +36,21 @@ body {
   flex-direction: row;
 }
 
+body::-webkit-scrollbar,
+ul::-webkit-scrollbar {
+  width: 5px;
+}
+
+body::-webkit-scrollbar-track,
+ul::-webkit-scrollbar-track {
+  background: rgb(25, 25, 112); /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb,
+ul::-webkit-scrollbar-thumb {
+  background-color: rgb(190, 190, 190); /* color of the scroll thumb */
+}
+
 aside {
   z-index: 2;
   position: fixed;
@@ -112,7 +127,7 @@ ul {
   margin: 0;
   padding: 0;
   list-style: none;
-  overflow-y: scroll;
+  overflow-y: auto;
   text-align: center;
 }
 
