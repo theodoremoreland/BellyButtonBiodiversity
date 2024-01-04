@@ -85,12 +85,14 @@ header > .bg {
 header > h1 {
   z-index: 2;
   position: relative;
+  margin: 0;
   padding-top: 10px;
 }
 
 header > p {
   z-index: 2;
   position: relative;
+  margin: 1rem 0;
   padding-bottom: 10px;
 }
 
@@ -173,8 +175,23 @@ rect.highcharts-background {
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 }
 
-#metadata {
-  display: none;
+.metadata-container {
+  position: relative;
+  justify-content: space-between;
+}
+
+.metadata {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+  width: clamp(10rem, 20%, 35rem);
+  color: white;
+  padding: 5px 10px;
+  background-color: #00000080;
+  border-radius: 9px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 
 #pie,

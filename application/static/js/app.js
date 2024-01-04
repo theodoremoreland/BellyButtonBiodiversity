@@ -1,12 +1,22 @@
 function buildMetadata(sample) {
   d3.json("/metadata/" + sample).then((sample_data) => {
-    var sample_panel = d3.select("#sample-metadata");
+    const { ETHNICITY, GENDER, AGE, BBTYPE } = sample_data;
+    var ageElement = d3.select("#age");
+    var genderElement = d3.select("#gender");
+    var ethnicityElement = d3.select("#ethnicity");
+    var bbType = d3.select("#bbtype");
 
-    sample_panel.html("");
+    ageElement.html("");
+    genderElement.html("");
+    ethnicityElement.html("");
+    bbType.html("");
 
-    Object.entries(sample_data).forEach(([key, value]) => {
-      sample_panel.append("p").html(`<strong>${key}:</strong> ${value}`);
-    });
+    ageElement.append("p").html(`<strong>Age:</strong> ${AGE}`);
+    genderElement.append("p").html(`<strong>Gender:</strong> ${GENDER}`);
+    ethnicityElement
+      .append("p")
+      .html(`<strong>Ethnicity:</strong> ${ETHNICITY}`);
+    bbType.append("p").html(`<strong>Belly Button Type:</strong> ${BBTYPE}`);
   });
 }
 
@@ -59,7 +69,7 @@ function buildCharts(sample) {
         plotBackgroundImage: null,
         plotBorderWidth: 0,
         plotShadow: false,
-        height: "100%",
+        height: "80%",
       },
       title: {
         text: "Bully button washing frequency",
@@ -204,8 +214,6 @@ function init() {
 document.querySelector("#sample-list").addEventListener("click", (event) => {
   const target = event.target;
   const newSample = Number(target.getAttribute("data-value"));
-
-  console.log(target);
 
   if (newSample) {
     // Fetch new data each time a new sample is selected
