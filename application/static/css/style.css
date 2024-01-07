@@ -142,12 +142,6 @@ li > p {
   pointer-events: none;
 }
 
-section {
-  border-radius: 20px;
-  /* background-color: white; */
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-}
-
 section > .dashboard-row:nth-of-type(2) {
   background-color: #00000080;
   border-radius: 9px;
@@ -167,13 +161,23 @@ rect.highcharts-background {
 }
 
 .dashboard-row {
+  position: relative;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: nowrap;
   justify-content: space-around;
   align-items: center;
+  gap: 10px;
   width: 100%;
   margin-bottom: 20px;
+}
+
+@media screen and (min-width: 910px) {
+  .dashboard-row {
+    flex-direction: row;
+    justify-content: space-around;
+    gap: initial;
+  }
 }
 
 .sample {
@@ -204,7 +208,20 @@ rect.highcharts-background {
 
 .metadata-container {
   position: relative;
-  justify-content: space-between;
+  justify-content: center;
+  font-size: 0.8rem;
+}
+
+@media screen and (min-width: 910px) {
+  .metadata-container {
+    justify-content: space-between;
+  }
+}
+
+@media screen and (min-width: 1040px) {
+  .metadata-container {
+    font-size: 1rem;
+  }
 }
 
 .metadata {
@@ -223,10 +240,17 @@ rect.highcharts-background {
 
 #pie,
 #gauge {
-  width: 40%;
+  width: 100%;
   max-width: 630px;
 }
 
 #bubble {
   width: 100%;
+}
+
+@media screen and (min-width: 910px) {
+  #pie,
+  #gauge {
+    width: 40%;
+  }
 }
