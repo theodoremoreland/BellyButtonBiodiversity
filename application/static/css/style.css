@@ -51,11 +51,12 @@ ul::-webkit-scrollbar-thumb {
   background-color: rgb(190, 190, 190); /* color of the scroll thumb */
 }
 
-aside {
-  z-index: 2;
+.desktop.selection-container {
+  z-index: 99;
   position: fixed;
   top: 0;
   left: 0;
+  display: none;
   height: 100vh;
   width: 8.5rem;
   color: white;
@@ -64,13 +65,62 @@ aside {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 
+.mobile.selection-container {
+  z-index: 99;
+  position: fixed;
+  top: 0;
+  left: -8.5rem;
+  height: 100vh;
+  width: 8.5rem;
+  color: white;
+  fill: white;
+  background-color: #1a0832;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+#sidebar-toggle {
+  z-index: 99;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 1.5rem;
+  color: white;
+  font-weight: bold;
+  background-color: #191970;
+  cursor: pointer;
+}
+
+#sidebar-toggle:hover {
+  filter: brightness(1.2);
+}
+
 main {
+  box-sizing: border-box;
   position: relative;
   height: 100%;
   width: 100%;
-  padding: 10px 30px 10px 9.5rem;
-  background: rgb(2, 0, 36);
+  padding: 10px 35px;
+  background: rgb(88, 21, 148);
   background: linear-gradient(180deg, rgb(88, 21, 148) 0%, rgb(27, 17, 77) 65%);
+}
+
+@media screen and (min-width: 640px) {
+  .desktop.selection-container {
+    display: initial;
+  }
+
+  #sidebar-toggle {
+    display: none;
+  }
+
+  main {
+    padding-left: 9.5rem;
+  }
 }
 
 header {
@@ -197,7 +247,7 @@ rect.highcharts-background {
   background-color: rgb(25, 25, 112);
 }
 
-#sample-list-label {
+.sample-list-label {
   position: sticky;
   height: 1.9rem;
   margin: 0;
