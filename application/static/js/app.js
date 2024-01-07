@@ -54,8 +54,14 @@ function buildCharts(sample) {
         "#E6E6FA",
         "#FF00FF",
       ],
-      height: 450,
-      width: 450,
+      showlegend: true,
+      autosize: true,
+      yaxis: {
+        automargin: true,
+      },
+      xaxis: {
+        automargin: true,
+      },
     };
 
     Plotly.newPlot("pie", pie_data, pie_layout, { responsive: true });
