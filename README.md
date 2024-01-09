@@ -28,7 +28,6 @@ _This project was for an assignment at Washington University's Data Analytics Bo
 - SQLAlchemy
 - flask_sqlalchemy
 - SQLite
-- Bootstrap 3
 - Docker
 
 # How to run locally
