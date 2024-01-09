@@ -22,10 +22,30 @@ sidebarToggle.addEventListener("click", () => {
 function buildMetadata(sample) {
   d3.json("/metadata/" + sample).then((sample_data) => {
     const { ETHNICITY, GENDER, AGE, BBTYPE } = sample_data;
+    var bbTypeTransformed = undefined;
+    var genderTransformed = undefined;
     var ageElement = d3.select("#age");
     var genderElement = d3.select("#gender");
     var ethnicityElement = d3.select("#ethnicity");
     var bbType = d3.select("#bbtype");
+
+    if (GENDER?.toLowerCase() === "m") {
+      genderTransformed = "Male";
+    } else if (GENDER?.toLowerCase() === "f") {
+      genderTransformed = "Female";
+    } else {
+      genderTransformed = "Unspecified";
+    }
+
+    if (BBTYPE?.toLowerCase() === "i") {
+      bbTypeTransformed = "Innie";
+    } else if (BBTYPE?.toLowerCase() === "o") {
+      bbTypeTransformed = "Outie";
+    } else if (BBTYPE) {
+      bbTypeTransformed = BBTYPE;
+    } else {
+      bbTypeTransformed = "Unspecified";
+    }
 
     ageElement.html("");
     genderElement.html("");
@@ -33,11 +53,15 @@ function buildMetadata(sample) {
     bbType.html("");
 
     ageElement.append("p").html(`<strong>Age:</strong> ${AGE}`);
-    genderElement.append("p").html(`<strong>Gender:</strong> ${GENDER}`);
+    genderElement
+      .append("p")
+      .html(`<strong>Gender:</strong> ${genderTransformed}`);
     ethnicityElement
       .append("p")
       .html(`<strong>Ethnicity:</strong> ${ETHNICITY}`);
-    bbType.append("p").html(`<strong>Belly Button Type:</strong> ${BBTYPE}`);
+    bbType
+      .append("p")
+      .html(`<strong>Belly Button Type:</strong> ${bbTypeTransformed}`);
   });
 }
 
