@@ -14,6 +14,8 @@ _This project was for an assignment at Washington University's Data Analytics Bo
   - [Run on Windows](#run-on-windows)
   - [Run on Docker](#run-on-docker)
 - [Screenshots](#screenshots)
+  - [Desktop](#desktop)
+  - [Mobile](#mobile)
 
 # Technologies Used
 
@@ -93,6 +95,30 @@ Visit: http://localhost:5000 to use the application.
 
 # Screenshots
 
-## Default
+## Desktop
 
-<img src="presentation/thumbnail.png" width="900">
+### View
+
+<img src="https://dj8eg5xs13hf6.cloudfront.net/belly-button-biodiversity/1.png" width="800">
+
+### View 2 (scrolled down)
+
+<img src="https://dj8eg5xs13hf6.cloudfront.net/belly-button-biodiversity/2.png" width="800">
+
+### View 1 (A different test subject selected)
+
+<img src="https://dj8eg5xs13hf6.cloudfront.net/belly-button-biodiversity/4.png" width="800">
+
+### View 2 (A different test subject selected)
+
+<img src="https://dj8eg5xs13hf6.cloudfront.net/belly-button-biodiversity/3.png" width="800">
+
+## Mobile
+
+### View
+
+<img src="https://dj8eg5xs13hf6.cloudfront.net/belly-button-biodiversity/5.png" width="300">
+
+### Menu open
+
+<img src="https://dj8eg5xs13hf6.cloudfront.net/belly-button-biodiversity/6.png" width="300">
