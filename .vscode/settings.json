@@ -6,12 +6,24 @@
   "cSpell.words": [
     "autoload",
     "automap",
+    "automargin",
     "BBTYPE",
+    "Bluered",
+    "blueviolet",
     "colorscale",
+    "Highcharts",
+    "hovertext",
+    "Inconsolata",
+    "Innie",
     "jsonify",
+    "midnightblue",
+    "Outie",
     "Plotly",
+    "showlegend",
     "Sono",
     "SQLALCHEMY",
-    "WFREQ"
+    "WFREQ",
+    "xaxis",
+    "yaxis"
   ]
 }
