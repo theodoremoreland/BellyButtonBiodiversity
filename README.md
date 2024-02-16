@@ -26,6 +26,7 @@ _This project was for an assignment at Washington University's Data Analytics Bo
 - Flask
 - Pandas
 - d3.js
+- Highcharts
 - Plotly.js
 - SQLAlchemy
 - flask_sqlalchemy
