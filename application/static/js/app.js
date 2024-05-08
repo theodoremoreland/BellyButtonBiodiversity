@@ -123,10 +123,11 @@ function buildCharts(sample) {
         height: "80%",
       },
       title: {
-        text: "Bully button washing frequency",
+        text: "Belly button washing frequency",
         style: {
           fontFamily: "Inconsolata-Regular",
           color: "white",
+          fontWeight: "regular",
         },
       },
       pane: {
