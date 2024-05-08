@@ -182,7 +182,7 @@ function buildCharts(sample) {
       },
       series: [
         {
-          name: "Washes per Week",
+          name: "Washes per week",
           data: [sample_data || 0],
           tooltip: {
             valueSuffix: " washes per week",
