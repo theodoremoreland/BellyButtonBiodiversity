@@ -128,6 +128,7 @@ function buildCharts(sample) {
           fontFamily: "Inconsolata-Regular",
           color: "white",
           fontWeight: "regular",
+          fontSize: "1em",
         },
       },
       pane: {
