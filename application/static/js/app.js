@@ -122,6 +122,9 @@ function buildCharts(sample) {
         plotShadow: false,
         height: "80%",
       },
+      exporting: {
+        enabled: false,
+      },
       title: {
         text: "Belly button washing frequency",
         style: {
