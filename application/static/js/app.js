@@ -126,7 +126,7 @@ function buildCharts(sample) {
         enabled: false,
       },
       title: {
-        text: "Belly button washing frequency",
+        text: undefined,
         style: {
           fontFamily: "Inconsolata-Regular",
           color: "white",
@@ -185,10 +185,10 @@ function buildCharts(sample) {
           name: "Washes per week",
           data: [sample_data || 0],
           tooltip: {
-            valueSuffix: " washes per week",
+            valueSuffix: "",
           },
           dataLabels: {
-            format: "{y} washes per week",
+            format: "{y} belly button washes per week",
             borderWidth: 0,
             color: "white",
             style: {
