@@ -306,6 +306,10 @@ rect.highcharts-background {
   max-width: 630px;
 }
 
+#gauge {
+  min-height: 400px;
+}
+
 #bubble {
   width: 100%;
 }
@@ -314,5 +318,9 @@ rect.highcharts-background {
   #pie,
   #gauge {
     width: 40%;
+  }
+
+  #gauge {
+    min-height: auto;
   }
 }
