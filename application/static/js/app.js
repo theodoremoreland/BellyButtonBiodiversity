@@ -130,7 +130,7 @@ function buildCharts(sample) {
         style: {
           fontFamily: "Inconsolata-Regular",
           color: "white",
-          fontWeight: "regular",
+          fontWeight: "normal",
           fontSize: "1em",
         },
       },
@@ -194,6 +194,7 @@ function buildCharts(sample) {
             style: {
               fontSize: "16px",
               fontFamily: "Inconsolata-Regular",
+              fontWeight: "normal",
             },
           },
           dial: {
