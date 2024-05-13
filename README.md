@@ -118,27 +118,27 @@ Visit: http://localhost:5000 to use the application.
 
 ### Top View
 
-<img src="https://dj8eg5xs13hf6.cloudfront.net/belly-button-biodiversity/5.png" width="300">
+<img src="https://dj8eg5xs13hf6.cloudfront.net/belly-button-biodiversity/5.png" width="250">
 
 ### Scrolled down (1)
 
-<img src="https://dj8eg5xs13hf6.cloudfront.net/belly-button-biodiversity/6.png" width="300">
+<img src="https://dj8eg5xs13hf6.cloudfront.net/belly-button-biodiversity/6.png" width="250">
 
 ### Scrolled down (2)
 
-<img src="https://dj8eg5xs13hf6.cloudfront.net/belly-button-biodiversity/7.png" width="300">
+<img src="https://dj8eg5xs13hf6.cloudfront.net/belly-button-biodiversity/7.png" width="250">
 
 ### View Top - Menu Open
 
-<img src="https://dj8eg5xs13hf6.cloudfront.net/belly-button-biodiversity/8.png" width="300">
+<img src="https://dj8eg5xs13hf6.cloudfront.net/belly-button-biodiversity/8.png" width="250">
 
 ### View Top - Meu Open - New subject selected
 
-<img src="https://dj8eg5xs13hf6.cloudfront.net/belly-button-biodiversity/9.png" width="300">
+<img src="https://dj8eg5xs13hf6.cloudfront.net/belly-button-biodiversity/9.png" width="250">
 
 ### View Top - Meu Open - New subject selected
 
-<img src="https://dj8eg5xs13hf6.cloudfront.net/belly-button-biodiversity/10.png" width="300">
+<img src="https://dj8eg5xs13hf6.cloudfront.net/belly-button-biodiversity/10.png" width="250">
 
 ### View Top - New subject selected
 
