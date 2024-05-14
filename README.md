@@ -100,19 +100,19 @@ Visit: http://localhost:5000 to use the application.
 
 ### View
 
-<img src="https://dj8eg5xs13hf6.cloudfront.net/belly-button-biodiversity/1.png" width="800">
+<img src="https://dj8eg5xs13hf6.cloudfront.net/belly-button-biodiversity/1.png" width="650">
 
 ### View 2 (scrolled down)
 
-<img src="https://dj8eg5xs13hf6.cloudfront.net/belly-button-biodiversity/2.png" width="800">
+<img src="https://dj8eg5xs13hf6.cloudfront.net/belly-button-biodiversity/2.png" width="650">
 
 ### View 1 (A different test subject selected)
 
-<img src="https://dj8eg5xs13hf6.cloudfront.net/belly-button-biodiversity/3.png" width="800">
+<img src="https://dj8eg5xs13hf6.cloudfront.net/belly-button-biodiversity/3.png" width="650">
 
 ### View 2 (A different test subject selected)
 
-<img src="https://dj8eg5xs13hf6.cloudfront.net/belly-button-biodiversity/4.png" width="800">
+<img src="https://dj8eg5xs13hf6.cloudfront.net/belly-button-biodiversity/4.png" width="650">
 
 ## Mobile
 
@@ -135,15 +135,3 @@ Visit: http://localhost:5000 to use the application.
 ### View Top - Meu Open - New subject selected
 
 <img src="https://dj8eg5xs13hf6.cloudfront.net/belly-button-biodiversity/9.png" width="250">
-
-### View Top - New subject selected
-
-<img src="https://dj8eg5xs13hf6.cloudfront.net/belly-button-biodiversity/10.png" width="250">
-
-### Scrolled down - New subject selected
-
-<img src="https://dj8eg5xs13hf6.cloudfront.net/belly-button-biodiversity/11.png" width="300">
-
-### Scrolled down - New subject selected
-
-<img src="https://dj8eg5xs13hf6.cloudfront.net/belly-button-biodiversity/12.png" width="300">
