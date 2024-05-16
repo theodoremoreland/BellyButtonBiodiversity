@@ -292,12 +292,19 @@ rect.highcharts-background {
   flex-wrap: nowrap;
   justify-content: space-around;
   align-items: center;
-  width: clamp(10rem, 20%, 35rem);
+  width: 100%;
   color: white;
-  padding: 5px 10px;
+  padding: 5px 0px;
   background-color: #00000080;
   border-radius: 9px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+@media screen and (min-width: 910px) {
+  .metadata {
+    width: clamp(10rem, 20%, 35rem);
+    padding: 5px 10px;
+  }
 }
 
 #pie,
