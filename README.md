@@ -1,6 +1,6 @@
 # Belly Button Biodiversity
 
-An interactive data dashboard for exploring the various bacteria present on the human belly button. The app uses Plotly.js to display an interactive pie chart and bubble chart with a dropdown for each sample.
+An interactive data dashboard for exploring the various bacteria present on the human belly button. The app uses Plotly.js to display an interactive pie chart and bubble chart. Highcharts is used to display a gauge chart.
 This project was based on Dan Fergus's and Sarah Council's _Belly Button Biodiversity_: http://robdunnlab.com/projects/belly-button-biodiversity/
 
 _This project was for an assignment at Washington University's Data Analytics Boot Camp (2019)_
