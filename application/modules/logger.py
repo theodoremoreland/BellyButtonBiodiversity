@@ -6,7 +6,6 @@ fileHandler = handlers.RotatingFileHandler(
     "belly-button-biodiversity.log", maxBytes=10000
 )
 formatter = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s")
-
 fileHandler.setFormatter(formatter)
 logger.addHandler(fileHandler)
 logger.setLevel(
