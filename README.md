@@ -6,9 +6,11 @@ _This project was for an assignment at Washington University's Data Analytics Bo
 
 <img src="presentation/thumbnail.png" width="700">
 
-[Visit the live deployment here](http://belly-button-biodiversity.us-east-2.elasticbeanstalk.com/)
+[Visit the webpage](http://belly-button-biodiversity.us-east-2.elasticbeanstalk.com/)
 
 # Table of contents
+
+[Visit the webpage](http://belly-button-biodiversity.us-east-2.elasticbeanstalk.com/)
 
 - [Technologies Used](#technologies-used)
 - [How to run locally](#how-to-run-locally)
