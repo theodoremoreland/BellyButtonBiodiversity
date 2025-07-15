@@ -8,19 +8,19 @@ _This project was for an assignment at Washington University's Data Analytics Bo
 
 [View the web application](http://belly-button-biodiversity.us-east-2.elasticbeanstalk.com/)
 
-# Table of contents
+## Table of contents
 
 [View the web application](http://belly-button-biodiversity.us-east-2.elasticbeanstalk.com/)
 
 - [Technologies Used](#technologies-used)
 - [How to run locally](#how-to-run-locally)
   - [Run on Windows](#run-on-windows)
-  - [Run on Docker](#run-on-docker)
+  - [Run on Docker (Recommended)](#run-on-docker-recommended)
 - [Screenshots](#screenshots)
   - [Desktop](#desktop)
   - [Mobile](#mobile)
 
-# Technologies Used
+## Technologies Used
 
 - Python (3.11)
 - JavaScript
@@ -35,69 +35,64 @@ _This project was for an assignment at Washington University's Data Analytics Bo
 - flask_sqlalchemy
 - SQLite
 - Docker
+- gunicorn
 
-# How to run locally
+## How to run locally
 
 - If you are trying to run this application directly on a Windows OS, you will need to install `Python 3.11`.
 - Otherwise, you will need to install Docker so you can run the application through Docker.
 
 ## Run on Windows
 
-Assumes you are using a modern Windows client OS such as Windows 11 or Windows 10 and that Python 3.11 is installed.
+Assumes you are using a modern Windows client OS such as Windows 11 or Windows 10 and that Python 3.11 is installed. Visual Studio and Microsoft C++ Build Tools are likely to be required. Running via Docker is recommended instead.
 
 **It is assumed the user is at the root of this project and is using a UNIX style command line environment when referencing the CLI commands below.**
 
 Open terminal at root of this project then move into application/ directory:
 
-```
+```bash
 cd application/
 ```
 
 Create venv folder in application folder using Python 3.11:
 
-```
+```bash
 python3.11 -m venv venv
 ```
 
 Activate venv:
 
-```
+```bash
 source venv/Scripts/activate
 ```
 
 Install python packages to venv:
 
-```
+```bash
 pip install -r requirements.txt
 ```
 
 Start application:
 
-```
+```bash
 python application.py
 ```
 
-## Run on Docker
+## Run on Docker (Recommended)
 
 Firstly, confirm that Docker is installed and running. Next confirm that no other application is using port `5000` as port `5000` is needed for the Flask server. If you need to run Flask on an alternative port, you can modify the last line in the `application/application.py` file and the ports in the `docker/docker-compose.yml` file.
 
 **It is assumed the user is at the root of this project and is using a UNIX style command line environment when referencing the CLI commands below.**
 
-Open terminal at root of this project then move into docker/ directory:
-
-```
-cd docker/
-```
-
 Build Docker image and start Docker container:
 
-```
+```bash
 docker compose up --build
 ```
 
-Visit: http://localhost:5000 to use the application.
+Visit: <http://localhost:5000> to use the application.
 
-# Screenshots
+## Screenshots
 
 ## Desktop
 
