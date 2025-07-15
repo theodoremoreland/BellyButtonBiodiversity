@@ -6,11 +6,11 @@ _This project was for an assignment at Washington University's Data Analytics Bo
 
 <img src="presentation/thumbnail.png" width="700">
 
-[View the web application](http://belly-button-biodiversity.us-east-2.elasticbeanstalk.com/)
+[View the web application](https://belly-button-biodiversity-container-service.tw35szt7qqpz2.us-east-2.cs.amazonlightsail.com/)
 
 ## Table of contents
 
-[View the web application](http://belly-button-biodiversity.us-east-2.elasticbeanstalk.com/)
+[View the web application](https://belly-button-biodiversity-container-service.tw35szt7qqpz2.us-east-2.cs.amazonlightsail.com/)
 
 - [Technologies Used](#technologies-used)
 - [How to run locally](#how-to-run-locally)
@@ -80,7 +80,7 @@ python application.py
 
 ## Run on Docker (Recommended)
 
-Firstly, confirm that Docker is installed and running. Next confirm that no other application is using port `5000` as port `5000` is needed for the Flask server. If you need to run Flask on an alternative port, you can modify the last line in the `application/application.py` file and the ports in the `docker/docker-compose.yml` file.
+Firstly, confirm that Docker is installed and running. Next confirm that no other application is using port `5000` as port `5000` is needed for the Flask server. If you need to run Flask on an alternative port, you can modify the last line in the `application/application.py` file and the ports in the `docker-compose.yml` file.
 
 **It is assumed the user is at the root of this project and is using a UNIX style command line environment when referencing the CLI commands below.**
 

@@ -15,6 +15,10 @@
   src: url("../fonts/Inconsolata-Light.ttf");
 }
 
+:root {
+  overscroll-behavior: none;
+}
+
 html {
   font-family: Inconsolata-Regular;
   background-color: rgb(88, 21, 148);
