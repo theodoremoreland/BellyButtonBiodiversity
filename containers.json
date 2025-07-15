@@ -1,0 +1,8 @@
+{
+  "belly-button-biodiversity": {
+    "image": ":belly-button-biodiversity-container-service.belly-button-biodiversity.latest",
+    "ports": {
+      "5000": "HTTP"
+    }
+  }
+}
