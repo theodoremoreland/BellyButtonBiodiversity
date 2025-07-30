@@ -4,13 +4,15 @@ An interactive data dashboard for exploring the various bacteria present on the 
 
 _This project was for an assignment at Washington University's Data Analytics Boot Camp (2019)_
 
-<img src="presentation/thumbnail.png" width="700">
+<img src="presentation/thumbnail.webp" width="700">
 
-[View the web application](https://belly-button-biodiversity-container-service.tw35szt7qqpz2.us-east-2.cs.amazonlightsail.com/)
+[View the web application](https://belly-button-biodiversity.theodoremoreland.dev/)
+
+
 
 ## Table of contents
 
-[View the web application](https://belly-button-biodiversity-container-service.tw35szt7qqpz2.us-east-2.cs.amazonlightsail.com/)
+[View the web application](https://belly-button-biodiversity.theodoremoreland.dev/)
 
 - [Technologies Used](#technologies-used)
 - [How to run locally](#how-to-run-locally)
